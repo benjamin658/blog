@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Ben Hu">
 <meta property="og:description" content="LVM (Logical Volume Manager) 在 Linux 環境中提供更大的彈性進行磁碟空間的劃分與縮放管理。 本文並不會針對 LVM 做深入的論述，單純記錄實際的操作步驟。 操作流程簡述 假設現有一個乾淨的硬碟，掛載於 /dev/sdc (實際情況可透過 lsblk 查看)  Step1: fdisk 建立分區首先將硬碟建立分區，指令為 sudo fdisk /dev/sdc 接著">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2019-08-07T07:58:44.324Z">
+<meta property="og:updated_time" content="2019-08-07T08:08:06.850Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu LVM 簡易步驟">
 <meta name="twitter:description" content="LVM (Logical Volume Manager) 在 Linux 環境中提供更大的彈性進行磁碟空間的劃分與縮放管理。 本文並不會針對 LVM 做深入的論述，單純記錄實際的操作步驟。 操作流程簡述 假設現有一個乾淨的硬碟，掛載於 /dev/sdc (實際情況可透過 lsblk 查看)  Step1: fdisk 建立分區首先將硬碟建立分區，指令為 sudo fdisk /dev/sdc 接著">
@@ -339,7 +339,11 @@
 <h3 id="Step5-初始化檔案系統-mkfs"><a href="#Step5-初始化檔案系統-mkfs" class="headerlink" title="Step5: 初始化檔案系統 mkfs"></a>Step5: 初始化檔案系統 mkfs</h3><p>實際將 Logical Volume 掛載到目錄被使用以前，需要先初始化檔案系統</p>
 <p>輸入 <code>sudo mkfs.ext4 /dev/vg-01/lv-01</code></p>
 <p>其中 mkfs.ext4 後面接的是上一步驟透過 <code>lvdisplay</code> 所得到的 <code>LV Path</code></p>
-<h3 id="Step6-掛載至檔案目錄"><a href="#Step6-掛載至檔案目錄" class="headerlink" title="Step6: 掛載至檔案目錄"></a>Step6: 掛載至檔案目錄</h3>
+<h3 id="Step6-掛載至檔案目錄"><a href="#Step6-掛載至檔案目錄" class="headerlink" title="Step6: 掛載至檔案目錄"></a>Step6: 掛載至檔案目錄</h3><p>最後一步單純是將 Logical Volume 掛載至目錄</p>
+<p>建立目錄 <code>sudo mkdir /data</code></p>
+<p>接著輸入 <code>sudo mount /dev/vg-01/lv-01 /data</code></p>
+<p>這樣就大功告成啦！</p>
+
       
     </div>
     

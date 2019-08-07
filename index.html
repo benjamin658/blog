@@ -339,7 +339,11 @@
 <h3 id="Step5-初始化檔案系統-mkfs"><a href="#Step5-初始化檔案系統-mkfs" class="headerlink" title="Step5: 初始化檔案系統 mkfs"></a>Step5: 初始化檔案系統 mkfs</h3><p>實際將 Logical Volume 掛載到目錄被使用以前，需要先初始化檔案系統</p>
 <p>輸入 <code>sudo mkfs.ext4 /dev/vg-01/lv-01</code></p>
 <p>其中 mkfs.ext4 後面接的是上一步驟透過 <code>lvdisplay</code> 所得到的 <code>LV Path</code></p>
-<h3 id="Step6-掛載至檔案目錄"><a href="#Step6-掛載至檔案目錄" class="headerlink" title="Step6: 掛載至檔案目錄"></a>Step6: 掛載至檔案目錄</h3>
+<h3 id="Step6-掛載至檔案目錄"><a href="#Step6-掛載至檔案目錄" class="headerlink" title="Step6: 掛載至檔案目錄"></a>Step6: 掛載至檔案目錄</h3><p>最後一步單純是將 Logical Volume 掛載至目錄</p>
+<p>建立目錄 <code>sudo mkdir /data</code></p>
+<p>接著輸入 <code>sudo mount /dev/vg-01/lv-01 /data</code></p>
+<p>這樣就大功告成啦！</p>
+
           
         
       
