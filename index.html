@@ -330,7 +330,10 @@
 <h3 id="Step4-建立-LV-Logical-Volume"><a href="#Step4-建立-LV-Logical-Volume" class="headerlink" title="Step4: 建立 LV (Logical Volume)"></a>Step4: 建立 LV (Logical Volume)</h3><p>Volume Group 建立完成後接著建立 Logical Volume</p>
 <p>輸入 <code>sudo lvcreate -L 50G -n lv-01 vg-01</code></p>
 <blockquote>
-<p><code>lv-01</code> 為 Logical Volume 名稱，可自定義<br><code>vg-01</code> 為上一步驟建立的 Volume Group 名稱</p>
+<p><code>lv-01</code> 為 Logical Volume 名稱，可自定義</p>
+</blockquote>
+<blockquote>
+<p><code>vg-01</code> 為上一步驟建立的 Volume Group 名稱</p>
 </blockquote>
 <p>到這步驟基本上 lvm 已經算是告一段落了</p>
 <p>輸入 <code>sudo lvdisplay</code> 查看結果，應該會看到類似以下的訊息：</p>
