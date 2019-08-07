@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="linux,ubuntu,lvm,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ben Hu">
-<meta property="og:url" content="https://blog.benhu.site/index.html">
+<meta name="description" content="LVM (Logical Volume Manager) 在 Linux 環境中提供更大的彈性進行磁碟空間的劃分與縮放管理。 本文並不會針對 LVM 做深入的論述，單純記錄實際的操作步驟。 操作流程簡述 假設現有一個乾淨的硬碟，掛載於 /dev/sdc (實際情況可透過 lsblk 查看)  Step1: fdisk 建立分區首先將硬碟建立分區，指令為 sudo fdisk /dev/sdc 接著">
+<meta name="keywords" content="linux,ubuntu,lvm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu LVM 簡易步驟">
+<meta property="og:url" content="https://blog.benhu.site/2019/08/07/Ubuntu-LVM-簡易步驟/index.html">
 <meta property="og:site_name" content="Ben Hu">
+<meta property="og:description" content="LVM (Logical Volume Manager) 在 Linux 環境中提供更大的彈性進行磁碟空間的劃分與縮放管理。 本文並不會針對 LVM 做深入的論述，單純記錄實際的操作步驟。 操作流程簡述 假設現有一個乾淨的硬碟，掛載於 /dev/sdc (實際情況可透過 lsblk 查看)  Step1: fdisk 建立分區首先將硬碟建立分區，指令為 sudo fdisk /dev/sdc 接著">
 <meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2019-08-07T07:58:44.324Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ben Hu">
+<meta name="twitter:title" content="Ubuntu LVM 簡易步驟">
+<meta name="twitter:description" content="LVM (Logical Volume Manager) 在 Linux 環境中提供更大的彈性進行磁碟空間的劃分與縮放管理。 本文並不會針對 LVM 做深入的論述，單純記錄實際的操作步驟。 操作流程簡述 假設現有一個乾淨的硬碟，掛載於 /dev/sdc (實際情況可透過 lsblk 查看)  Step1: fdisk 建立分區首先將硬碟建立分區，指令為 sudo fdisk /dev/sdc 接著">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.benhu.site/">
+  <link rel="canonical" href="https://blog.benhu.site/2019/08/07/Ubuntu-LVM-簡易步驟/">
 
 
 
 
 
-  <title>Ben Hu</title>
+  <title>Ubuntu LVM 簡易步驟 | Ben Hu</title>
   
 
 
@@ -140,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,9 +228,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -256,9 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/07/Ubuntu-LVM-簡易步驟/" itemprop="url">Ubuntu LVM 簡易步驟</a></h1>
+          <h1 class="post-title" itemprop="name headline">Ubuntu LVM 簡易步驟</h1>
         
 
         <div class="post-meta">
@@ -308,9 +310,7 @@
       
 
       
-        
-          
-            <p>LVM (Logical Volume Manager) 在 Linux 環境中提供更大的彈性進行磁碟空間的劃分與縮放管理。</p>
+        <p>LVM (Logical Volume Manager) 在 Linux 環境中提供更大的彈性進行磁碟空間的劃分與縮放管理。</p>
 <p>本文並不會針對 LVM 做深入的論述，單純記錄實際的操作步驟。</p>
 <h2 id="操作流程簡述"><a href="#操作流程簡述" class="headerlink" title="操作流程簡述"></a>操作流程簡述</h2><blockquote>
 <p>假設現有一個乾淨的硬碟，掛載於 <code>/dev/sdc</code> (實際情況可透過 <code>lsblk</code> 查看)</p>
@@ -340,8 +340,6 @@
 <p>輸入 <code>sudo mkfs.ext4 /dev/vg-01/lv-01</code></p>
 <p>其中 mkfs.ext4 後面接的是上一步驟透過 <code>lvdisplay</code> 所得到的 <code>LV Path</code></p>
 <h3 id="Step6-掛載至檔案目錄"><a href="#Step6-掛載至檔案目錄" class="headerlink" title="Step6: 掛載至檔案目錄"></a>Step6: 掛載至檔案目錄</h3>
-          
-        
       
     </div>
     
@@ -356,14 +354,24 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/tags/ubuntu/" rel="tag"># ubuntu</a>
+          
+            <a href="/tags/lvm/" rel="tag"># lvm</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -373,10 +381,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -384,6 +393,13 @@
 
 
           
+
+  
+    <div id="gitalk-container"></div>
+
+  
+
+
 
         </div>
         
@@ -404,8 +420,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -472,6 +497,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#操作流程簡述"><span class="nav-number">1.</span> <span class="nav-text">操作流程簡述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step1-fdisk-建立分區"><span class="nav-number">1.1.</span> <span class="nav-text">Step1: fdisk 建立分區</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step2-建立-PV-Pyhsical-Volume"><span class="nav-number">1.2.</span> <span class="nav-text">Step2: 建立 PV (Pyhsical Volume)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step3-建立-VG-Volume-Group"><span class="nav-number">1.3.</span> <span class="nav-text">Step3: 建立 VG (Volume Group)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step4-建立-LV-Logical-Volume"><span class="nav-number">1.4.</span> <span class="nav-text">Step4: 建立 LV (Logical Volume)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step5-初始化檔案系統-mkfs"><span class="nav-number">1.5.</span> <span class="nav-text">Step5: 初始化檔案系統 mkfs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step6-掛載至檔案目錄"><span class="nav-number">1.6.</span> <span class="nav-text">Step6: 掛載至檔案目錄</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -605,6 +646,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -645,6 +690,22 @@
 
 
 
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '302f46c8eea39bf5a201',
+          clientSecret: 'eb67fadc0a6b13b2b95ff6c31d4ff9130ffbf723',
+          repo: 'hexo-blog',
+          owner: 'benjamin658',
+          admin: ['benjamin658'],
+          id: md5(location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
   
