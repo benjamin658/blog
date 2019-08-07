@@ -358,6 +358,9 @@
           
 
   
+    <div id="gitalk-container"></div>
+
+  
 
 
 
@@ -640,6 +643,23 @@
 
 
 
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '302f46c8eea39bf5a201',
+          clientSecret: 'eb67fadc0a6b13b2b95ff6c31d4ff9130ffbf723',
+          repo: 'hexo-blog',
+          owner: 'benjamin658',
+          admin: ['benjamin658'],
+          id: md5(location.pathname),
+          distractionFreeMode: 'false'
+        })
+        gitalk.render('gitalk-container')           
+       </script>
 
 
   
